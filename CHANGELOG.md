@@ -1,3 +1,10 @@
+### [1.0.1](https://github.com/neovici/cosmoz-dropdown/compare/v1.0.0...v1.0.1) (2021-12-16)
+
+
+### Bug Fixes
+
+* correct import ([8770331](https://github.com/neovici/cosmoz-dropdown/commit/87703319eb51fa13f353c2c8489ac3becb264d60))
+
 ## 1.0.0 (2021-12-16)
 
 

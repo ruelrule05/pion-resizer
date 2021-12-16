@@ -5,7 +5,7 @@ import { useFocus } from './use-focus';
 const preventDefault = e => e.preventDefault(),
 	fevs = ['focusin', 'focusout'],
 	Content = host => {
-		usePosition({ anchor: host.anchor, host });
+		usePosition({ anchor: host.anchor, host, placement: host.placement });
 		return html` <style>
 				:host {
 					position: fixed;
@@ -17,7 +17,8 @@ const preventDefault = e => e.preventDefault(),
 			<slot></slot>`;
 	},
 	Dropdown = host => {
-		const { active, onFocus, onToggle } = useFocus(host),
+		const { placement } = host,
+			{ active, onFocus, onToggle } = useFocus(host),
 			anchor = useCallback(() => host.shadowRoot.querySelector('.anchor'), []);
 		useEffect(() => {
 			host.setAttribute('tabindex', '-1');
@@ -44,7 +45,7 @@ const preventDefault = e => e.preventDefault(),
 				</button>
 			</div>
 			${ active
-		? html` <cosmoz-dropdown-content .anchor=${ anchor } part="dropdown">
+		? html` <cosmoz-dropdown-content part="dropdown" .anchor=${ anchor } .placement=${ placement }>
 						<slot></slot>
 				  </cosmoz-dropdown-content>`
 		: [] }

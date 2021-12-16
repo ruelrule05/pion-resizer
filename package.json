@@ -16,7 +16,7 @@
 	},
 	"license": "Apache-2.0",
 	"author": "",
-	"main": "cosmoz-dropdown.js",
+	"main": "sr/index.js",
 	"directories": {
 		"test": "test"
 	},

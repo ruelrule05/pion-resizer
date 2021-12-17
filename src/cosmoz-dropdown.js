@@ -31,6 +31,7 @@ const preventDefault = e => e.preventDefault(),
 			<style>
 				.anchor {
 					pointer-events: none;
+					padding: var(--cosmoz-dropdown-anchor-spacing);
 				}
 				button {
 					border: none;

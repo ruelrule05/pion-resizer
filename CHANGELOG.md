@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.1.0...v1.2.0) (2021-12-17)
+
+
+### Features
+
+* design ([5946a2c](https://github.com/neovici/cosmoz-dropdown/commit/5946a2c55926f276aa1d100796012cb76819f60c))
+
 ## [1.1.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.0.3...v1.1.0) (2021-12-17)
 
 

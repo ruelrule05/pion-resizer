@@ -1,3 +1,10 @@
+### [1.2.1](https://github.com/neovici/cosmoz-dropdown/compare/v1.2.0...v1.2.1) (2021-12-17)
+
+
+### Bug Fixes
+
+* slotted display ([126e231](https://github.com/neovici/cosmoz-dropdown/commit/126e231e9ac6a6076727b9be76161c038b811e36))
+
 ## [1.2.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.1.0...v1.2.0) (2021-12-17)
 
 

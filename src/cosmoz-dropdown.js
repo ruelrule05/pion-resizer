@@ -14,6 +14,9 @@ const preventDefault = e => e.preventDefault(),
 					background: var(--cosmoz-dropdown-bg-color, #fff);
 					box-shadow: var(--cosmoz-dropdown-box-shadow, 0px 3px 4px 2px rgba(0, 0, 0, 0.1));
 				}
+				::slotted(*) {
+					display: block;
+				}
 			</style>
 			<slot></slot>`;
 	},

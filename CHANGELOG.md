@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.3.0...v1.4.0) (2021-12-17)
+
+
+### Features
+
+* **cosmoz-dropdown:** add --cosmoz-dropdown-anchor-spacing ([902472d](https://github.com/neovici/cosmoz-dropdown/commit/902472dbae6ba4f9de2d92bcc6346464aaee7538))
+
 ## [1.3.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.2.1...v1.3.0) (2021-12-17)
 
 

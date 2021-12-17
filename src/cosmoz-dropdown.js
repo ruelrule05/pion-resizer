@@ -11,6 +11,9 @@ const preventDefault = e => e.preventDefault(),
 					left: -9999999999px;
 					min-width: 72px;
 					box-sizing: border-box;
+					padding: var(--cosmoz-dropdown-spacing, 0px)
+				}
+				.content {
 					background: var(--cosmoz-dropdown-bg-color, #fff);
 					box-shadow: var(--cosmoz-dropdown-box-shadow, 0px 3px 4px 2px rgba(0, 0, 0, 0.1));
 				}
@@ -18,7 +21,7 @@ const preventDefault = e => e.preventDefault(),
 					display: block;
 				}
 			</style>
-			<slot></slot>`;
+			<div class="content"><slot></slot></div>`;
 	},
 	Dropdown = host => {
 		const { placement } = host,

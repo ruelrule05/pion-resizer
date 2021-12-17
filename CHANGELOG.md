@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.2.1...v1.3.0) (2021-12-17)
+
+
+### Features
+
+* **dropdown:** add spacing support ([0d4c1db](https://github.com/neovici/cosmoz-dropdown/commit/0d4c1dbf0cbb75976709dff3d76385a17f5ad6ee))
+
 ### [1.2.1](https://github.com/neovici/cosmoz-dropdown/compare/v1.2.0...v1.2.1) (2021-12-17)
 
 

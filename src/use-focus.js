@@ -7,7 +7,10 @@ export const useFocus = ({ disabled, onFocus }) => {
 	const [{ focused, closed } = {}, setState] = useState(),
 		active = focused && !disabled,
 		meta = useMeta({ closed, onFocus }),
-		setClosed = useCallback(closed => setState(p => ({ ...p, closed })), []),
+		setClosed = useCallback(
+			closed => setState(p => ({ ...p, closed })),
+			[]
+		),
 		onToggle = useCallback(e => {
 			const target = e.currentTarget;
 			return isFocused(target)
@@ -40,10 +43,29 @@ export const useFocus = ({ disabled, onFocus }) => {
 		active: active && !closed,
 		setClosed,
 		onToggle,
-		onFocus: useCallback(e => {
-			const focused = isFocused(e.currentTarget);
-			setState({ focused });
-			meta.onFocus?.(focused);
-		}, [meta])
+		onFocus: useCallback(
+			e => {
+				const focused = isFocused(e.currentTarget);
+				setState({ focused });
+				meta.onFocus?.(focused);
+			},
+			[meta]
+		)
 	};
+};
+
+const fevs = ['focusin', 'focusout'];
+export const useHostFocus = host => {
+	const thru = useFocus(host),
+		{ onFocus } = thru;
+
+	useEffect(() => {
+		host.setAttribute('tabindex', '-1');
+		fevs.forEach(ev => host.addEventListener(ev, onFocus));
+		return () => {
+			fevs.forEach(ev => host.removeEventListener(ev, onFocus));
+		};
+	}, []);
+
+	return thru;
 };

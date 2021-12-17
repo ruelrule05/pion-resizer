@@ -1,9 +1,8 @@
-import { html, component, useCallback, useEffect } from 'haunted';
+import { html, component, useCallback } from 'haunted';
 import { usePosition } from './use-position';
-import { useFocus } from './use-focus';
+import { useHostFocus } from './use-focus';
 
 const preventDefault = e => e.preventDefault(),
-	fevs = ['focusin', 'focusout'],
 	Content = host => {
 		usePosition({ anchor: host.anchor, host, placement: host.placement });
 		return html` <style>
@@ -18,15 +17,8 @@ const preventDefault = e => e.preventDefault(),
 	},
 	Dropdown = host => {
 		const { placement } = host,
-			{ active, onFocus, onToggle } = useFocus(host),
-			anchor = useCallback(() => host.shadowRoot.querySelector('.anchor'), []);
-		useEffect(() => {
-			host.setAttribute('tabindex', '-1');
-			fevs.forEach(ev => host.addEventListener(ev, onFocus));
-			return () => {
-				fevs.forEach(ev => host.removeEventListener(ev, onFocus));
-			};
-		}, []);
+			anchor = useCallback(() => host.shadowRoot.querySelector('.anchor'), []),
+			{ active, onToggle } = useHostFocus(host);
 		return html`
 			<style>
 				.anchor {

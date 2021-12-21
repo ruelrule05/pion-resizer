@@ -70,6 +70,7 @@ const preventDefault = e => e.preventDefault(),
 			::slotted(:not(slot)) {
 				display: block;
 				--paper-button_-_display: block;
+				box-sizing: border-box;
 				padding: 10px 24px;
 				background: transparent;
 				color: var(--cosmoz-dropdown-menu-color, #101010);

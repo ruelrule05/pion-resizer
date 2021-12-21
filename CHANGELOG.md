@@ -1,3 +1,10 @@
+### [1.5.2](https://github.com/neovici/cosmoz-dropdown/compare/v1.5.1...v1.5.2) (2021-12-21)
+
+
+### Bug Fixes
+
+* ignore events for slotted svg ([5d61828](https://github.com/neovici/cosmoz-dropdown/commit/5d6182866f3c103314d6e2671e29fb75f1d260e7))
+
 ### [1.5.1](https://github.com/neovici/cosmoz-dropdown/compare/v1.5.0...v1.5.1) (2021-12-21)
 
 

@@ -1,3 +1,10 @@
+### [1.5.1](https://github.com/neovici/cosmoz-dropdown/compare/v1.5.0...v1.5.1) (2021-12-21)
+
+
+### Bug Fixes
+
+* box-sizing ([56e2c0f](https://github.com/neovici/cosmoz-dropdown/commit/56e2c0f50012f24813e397f9c1c34f3b32e656b1))
+
 ## [1.5.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.4.0...v1.5.0) (2021-12-21)
 
 

@@ -52,6 +52,9 @@ const preventDefault = e => e.preventDefault(),
 				button:hover {
 					background: var(--cosmoz-dropdown-button-hover-bg-color, var(--cosmoz-button-hover-bg-color, #3A3F44));
 				}
+				::slotted(svg) {
+					pointer-events: none;
+				}
 			</style>
 			<div class="anchor" part="anchor">
 				<button @click=${ onToggle } @mousedown=${ preventDefault } part="button">

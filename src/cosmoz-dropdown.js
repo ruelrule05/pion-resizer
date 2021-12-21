@@ -58,7 +58,7 @@ const preventDefault = e => e.preventDefault(),
 					<slot name="button">...</slot>
 				</button>
 			</div>
-			${ active || 1 && html`
+			${ active && html`
 			<cosmoz-dropdown-content id="dropdown" part="dropdown" .anchor=${ anchor } .placement=${ placement } .render=${ render }>
 				<slot></slot>
 			</cosmoz-dropdown-content>` || [] }

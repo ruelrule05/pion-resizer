@@ -1,3 +1,15 @@
+## [1.5.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.4.0...v1.5.0) (2021-12-21)
+
+
+### Features
+
+* implement cosmoz-dropdown-menu ([56b3399](https://github.com/neovici/cosmoz-dropdown/commit/56b3399cde4b89ba899847c052d702c322956d28))
+
+
+### Bug Fixes
+
+* use active typo ([ea0bd45](https://github.com/neovici/cosmoz-dropdown/commit/ea0bd45cfaf4f284fb05badd9023e347bc5e884b))
+
 ## [1.4.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.3.0...v1.4.0) (2021-12-17)
 
 

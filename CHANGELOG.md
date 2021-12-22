@@ -1,3 +1,10 @@
+### [1.5.3](https://github.com/neovici/cosmoz-dropdown/compare/v1.5.2...v1.5.3) (2021-12-22)
+
+
+### Bug Fixes
+
+* add button id ([84fc376](https://github.com/neovici/cosmoz-dropdown/commit/84fc376c2ab61472e9cb6f310b3b8ec5665d52a9))
+
 ### [1.5.2](https://github.com/neovici/cosmoz-dropdown/compare/v1.5.1...v1.5.2) (2021-12-21)
 
 

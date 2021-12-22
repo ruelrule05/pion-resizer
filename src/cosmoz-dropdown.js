@@ -57,7 +57,7 @@ const preventDefault = e => e.preventDefault(),
 				}
 			</style>
 			<div class="anchor" part="anchor">
-				<button @click=${ onToggle } @mousedown=${ preventDefault } part="button">
+				<button @click=${ onToggle } @mousedown=${ preventDefault } part="button" id="dropdownButton">
 					<slot name="button">...</slot>
 				</button>
 			</div>

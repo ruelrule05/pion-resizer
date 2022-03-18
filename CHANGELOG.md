@@ -1,3 +1,10 @@
+## [1.6.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.5.3...v1.6.0) (2022-03-18)
+
+
+### Features
+
+* **dropdown:** export part for styles ([02362c0](https://github.com/neovici/cosmoz-dropdown/commit/02362c0e1f20cc03a6f4c70ba48c1bef7a671e01))
+
 ### [1.5.3](https://github.com/neovici/cosmoz-dropdown/compare/v1.5.2...v1.5.3) (2021-12-22)
 
 

@@ -62,7 +62,10 @@ const preventDefault = e => e.preventDefault(),
 				</button>
 			</div>
 			${ active && html`
-			<cosmoz-dropdown-content id="dropdown" part="dropdown" .anchor=${ anchor } .placement=${ placement } .render=${ render }>
+			<cosmoz-dropdown-content
+				id="dropdown" part="dropdown" exportparts="content: dropdown-content"
+				.anchor=${ anchor } .placement=${ placement } .render=${ render }
+			>
 				<slot></slot>
 			</cosmoz-dropdown-content>` || [] }
 		`;
@@ -86,6 +89,7 @@ const preventDefault = e => e.preventDefault(),
 				margin: 0;
 				width: 100%;
 			}
+
 			::slotted(:not(slot):hover) {
 				background: var(--cosmoz-dropdown-menu-hover-color, var(--cosmoz-selection-color, rgba(58, 145, 226, 0.1)));
 			}
@@ -98,7 +102,9 @@ const preventDefault = e => e.preventDefault(),
 		<slot></slot>
 	`,
 	Menu = host => html`
-		<cosmoz-dropdown .placement=${ host.placement }>
+		<cosmoz-dropdown .placement=${ host.placement }
+				part="dropdown"
+				exportparts=${ ['anchor', 'button', 'dropdown'].map(p => `${ p }: dropdown-${ p }`).concat(['dropdown-content']).join(', ') }>
 			<slot name="button" slot="button"></slot>
 			<cosmoz-dropdown-list><slot></slot></cosmoz-dropdown-list>
 		</cosmoz-dropdown>`;

@@ -1,3 +1,10 @@
+## [1.8.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.7.0...v1.8.0) (2022-03-31)
+
+
+### Features
+
+* **package.json:** remove exports ([847c34d](https://github.com/neovici/cosmoz-dropdown/commit/847c34deb472b6cc1019798a23aca9de1a74457e))
+
 ## [1.7.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.6.0...v1.7.0) (2022-03-31)
 
 

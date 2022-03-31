@@ -76,5 +76,9 @@
 		"semantic-release": "^18.0.0",
 		"sinon": "^11.0.0",
 		"typescript": "^4.0.0"
+	},
+	"exports": {
+		"./use-position": "./src/use-position.js",
+		"./use-focus": "./src/use-focus.js"
 	}
 }

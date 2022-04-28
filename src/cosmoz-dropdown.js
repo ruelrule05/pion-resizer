@@ -72,7 +72,11 @@ const preventDefault = e => e.preventDefault(),
 	},
 	List = () => html`
 		<style>
-			:host { display: contents; }
+			:host {
+				display: contents;
+				max-height: var(--cosmoz-dropdown-menu-max-height, calc(96vh - 64px));
+				overflow-y: auto;
+			}
 			::slotted(:not(slot)) {
 				display: block;
 				--paper-button_-_display: block;

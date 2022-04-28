@@ -1,3 +1,10 @@
+### [1.8.1](https://github.com/neovici/cosmoz-dropdown/compare/v1.8.0...v1.8.1) (2022-04-28)
+
+
+### Bug Fixes
+
+* **cosmoz-dropdown-menu:** limit list height to 96vh-64px ([29e4b03](https://github.com/neovici/cosmoz-dropdown/commit/29e4b03707c161841ab7ca0befd006b01ea30963))
+
 ## [1.8.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.7.0...v1.8.0) (2022-03-31)
 
 

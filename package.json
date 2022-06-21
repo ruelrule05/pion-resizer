@@ -54,7 +54,7 @@
 		]
 	},
 	"dependencies": {
-		"@neovici/cosmoz-utils": "^v4.0.0-beta.2",
+		"@neovici/cosmoz-utils": "^v4.0.0",
 		"haunted": "^5.0.0",
 		"lit-html": "^2.0.0",
 		"position.js": "^0.3.0"

@@ -1,3 +1,14 @@
+## [2.0.0-beta.1](https://github.com/neovici/cosmoz-dropdown/compare/v1.8.1...v2.0.0-beta.1) (2022-06-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* Upgrade to latest lit/haunted
+
+### Features
+
+* upgrade to latest lit/haunted ([76c00e0](https://github.com/neovici/cosmoz-dropdown/commit/76c00e0a28b2b2b3c0fdcc2dc14019b223aaf3cd))
+
 ### [1.8.1](https://github.com/neovici/cosmoz-dropdown/compare/v1.8.0...v1.8.1) (2022-04-28)
 
 

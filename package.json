@@ -1,6 +1,6 @@
 {
 	"name": "@neovici/cosmoz-dropdown",
-	"version": "2.0.0-beta.1",
+	"version": "2.0.0",
 	"description": "A simple dropdown web component",
 	"keywords": [
 		"lit-html",
@@ -53,7 +53,11 @@
 			"@commitlint/config-conventional"
 		],
 		"rules": {
-			"body-max-line-length": [1, "always", 100]
+			"body-max-line-length": [
+				1,
+				"always",
+				100
+			]
 		}
 	},
 	"dependencies": {

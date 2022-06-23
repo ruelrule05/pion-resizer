@@ -1,10 +1,11 @@
 import { component, useCallback } from 'haunted';
 import { html, nothing } from 'lit-html';
+import { when } from 'lit-html/directives/when.js';
 import { usePosition } from './use-position';
 import { useHostFocus } from './use-focus';
 
-const preventDefault = e => e.preventDefault(),
-	Content = host => {
+const preventDefault = (e) => e.preventDefault(),
+	Content = (host) => {
 		const { anchor, placement, render } = host;
 		usePosition({ anchor, placement, host });
 		return html` <style>
@@ -16,17 +17,22 @@ const preventDefault = e => e.preventDefault(),
 					padding: var(--cosmoz-dropdown-spacing, 0px);
 					z-index: var(--cosmoz-dropdown-z-index, 2);
 				}
-				.content {
+				.wrap {
 					background: var(--cosmoz-dropdown-bg-color, #fff);
-					box-shadow: var(--cosmoz-dropdown-box-shadow, 0px 3px 4px 2px rgba(0, 0, 0, 0.1));
+					box-shadow: var(
+						--cosmoz-dropdown-box-shadow,
+						0px 3px 4px 2px rgba(0, 0, 0, 0.1)
+					);
 				}
 				::slotted(*) {
 					display: block;
 				}
 			</style>
-			<div class="content" part="content"><slot></slot>${ render?.() || nothing }</div>`;
+			<div class="wrap" part="wrap">
+				<slot></slot>${render?.() || nothing}
+			</div>`;
 	},
-	Dropdown = host => {
+	Dropdown = (host) => {
 		const { placement, render } = host,
 			anchor = useCallback(() => host.shadowRoot.querySelector('.anchor'), []),
 			{ active, onToggle } = useHostFocus(host);
@@ -42,32 +48,59 @@ const preventDefault = e => e.preventDefault(),
 					position: relative;
 					pointer-events: auto;
 					outline: none;
-					background: var(--cosmoz-dropdown-button-bg-color, var(--cosmoz-button-bg-color, #101010));
-					color: var(--cosmoz-dropdown-button-color, var(--cosmoz-button-color, #fff));
+					background: var(
+						--cosmoz-dropdown-button-bg-color,
+						var(--cosmoz-button-bg-color, #101010)
+					);
+					color: var(
+						--cosmoz-dropdown-button-color,
+						var(--cosmoz-button-color, #fff)
+					);
 					border-radius: var(--cosmoz-dropdown-button-radius, 50%);
-					width: var(--cosmoz-dropdown-button-width, var(--cosmoz-dropdown-button-size, 40px));
-					height: var(--cosmoz-dropdown-button-height, var(--cosmoz-dropdown-button-size, 40px));
+					width: var(
+						--cosmoz-dropdown-button-width,
+						var(--cosmoz-dropdown-button-size, 40px)
+					);
+					height: var(
+						--cosmoz-dropdown-button-height,
+						var(--cosmoz-dropdown-button-size, 40px)
+					);
 					padding: var(--cosmoz-dropdown-button-padding);
 				}
 				button:hover {
-					background: var(--cosmoz-dropdown-button-hover-bg-color, var(--cosmoz-button-hover-bg-color, #3A3F44));
+					background: var(
+						--cosmoz-dropdown-button-hover-bg-color,
+						var(--cosmoz-button-hover-bg-color, #3a3f44)
+					);
 				}
 				::slotted(svg) {
 					pointer-events: none;
 				}
 			</style>
 			<div class="anchor" part="anchor">
-				<button @click=${ onToggle } @mousedown=${ preventDefault } part="button" id="dropdownButton">
+				<button
+					@click=${onToggle}
+					@mousedown=${preventDefault}
+					part="button"
+					id="dropdownButton"
+				>
 					<slot name="button">...</slot>
 				</button>
 			</div>
-			${ active && html`
-			<cosmoz-dropdown-content
-				id="dropdown" part="dropdown" exportparts="content: dropdown-content"
-				.anchor=${ anchor } .placement=${ placement } .render=${ render }
-			>
-				<slot></slot>
-			</cosmoz-dropdown-content>` || [] }
+			${when(
+				active,
+				() =>
+					html` <cosmoz-dropdown-content
+						id="content"
+						part="content"
+						exportparts="wrap, content"
+						.anchor=${anchor}
+						.placement=${placement}
+						.render=${render}
+					>
+						<slot></slot>
+					</cosmoz-dropdown-content>`
+			)}
 		`;
 	},
 	List = () => html`
@@ -95,7 +128,10 @@ const preventDefault = e => e.preventDefault(),
 			}
 
 			::slotted(:not(slot):hover) {
-				background: var(--cosmoz-dropdown-menu-hover-color, var(--cosmoz-selection-color, rgba(58, 145, 226, 0.1)));
+				background: var(
+					--cosmoz-dropdown-menu-hover-color,
+					var(--cosmoz-selection-color, rgba(58, 145, 226, 0.1))
+				);
 			}
 
 			::slotted(:not(slot)[disabled]) {
@@ -105,13 +141,14 @@ const preventDefault = e => e.preventDefault(),
 		</style>
 		<slot></slot>
 	`,
-	Menu = host => html`
-		<cosmoz-dropdown .placement=${ host.placement }
-				part="dropdown"
-				exportparts=${ ['anchor', 'button', 'dropdown'].map(p => `${ p }: dropdown-${ p }`).concat(['dropdown-content']).join(', ') }>
-			<slot name="button" slot="button"></slot>
-			<cosmoz-dropdown-list><slot></slot></cosmoz-dropdown-list>
-		</cosmoz-dropdown>`;
+	Menu = ({ placement }) => html` <cosmoz-dropdown
+		.placement=${placement}
+		part="dropdown"
+		exportparts="anchor, button, content, wrap, dropdown"
+	>
+		<slot name="button" slot="button"></slot>
+		<cosmoz-dropdown-list><slot></slot></cosmoz-dropdown-list>
+	</cosmoz-dropdown>`;
 
 customElements.define('cosmoz-dropdown-content', component(Content));
 customElements.define('cosmoz-dropdown', component(Dropdown));

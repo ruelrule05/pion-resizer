@@ -1,3 +1,10 @@
+## [2.1.0](https://github.com/neovici/cosmoz-dropdown/compare/v2.0.0...v2.1.0) (2022-06-23)
+
+
+### Features
+
+* **dropdown:** tweak slots ([1273a7d](https://github.com/neovici/cosmoz-dropdown/commit/1273a7d0037ee3956fdf2f5d61e2740f2105c862))
+
 ## [2.0.0](https://github.com/neovici/cosmoz-dropdown/compare/v1.8.1...v2.0.0) (2022-06-21)
 
 

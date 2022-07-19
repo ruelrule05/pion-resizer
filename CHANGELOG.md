@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/neovici/cosmoz-dropdown/compare/v2.1.0...v3.0.0) (2022-07-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** Upgrade to latest cosmoz-utils.
+
+### Features
+
+* **deps:** upgrade cosmoz-utils ([7fdc860](https://github.com/neovici/cosmoz-dropdown/commit/7fdc86086342731a606fb7dc31e09967269475ad))
+
 ## [2.1.0](https://github.com/neovici/cosmoz-dropdown/compare/v2.0.0...v2.1.0) (2022-06-23)
 
 

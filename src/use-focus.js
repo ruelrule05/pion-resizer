@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'haunted';
-import { useMeta } from '@neovici/cosmoz-utils/lib/hooks/use-meta';
+import { useMeta } from '@neovici/cosmoz-utils/hooks/use-meta';
 
 const isFocused = t => t.matches(':focus-within');
 

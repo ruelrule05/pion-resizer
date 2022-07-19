@@ -61,7 +61,7 @@
 		}
 	},
 	"dependencies": {
-		"@neovici/cosmoz-utils": "^v4.0.0",
+		"@neovici/cosmoz-utils": "^5.0.0",
 		"haunted": "^5.0.0",
 		"lit-html": "^2.0.0",
 		"position.js": "^0.3.0"
@@ -77,7 +77,6 @@
 		"@web/dev-server": "^0.1.28",
 		"@web/dev-server-storybook": "^0.5.1",
 		"@web/test-runner": "^0.13.0",
-		"@web/test-runner-selenium": "^0.5.0",
 		"husky": "^8.0.0",
 		"prettier": "^2.5.1",
 		"semantic-release": "^19.0.0",

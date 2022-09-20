@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/neovici/cosmoz-dropdown/compare/v3.0.0...v3.0.1) (2022-09-20)
+
+
+### Bug Fixes
+
+* **ci:** add DropdownMenu story ([104848d](https://github.com/neovici/cosmoz-dropdown/commit/104848dee25539ea3fd3ec03b1dbcadf1fc326f8))
+
 ## [3.0.0](https://github.com/neovici/cosmoz-dropdown/compare/v2.1.0...v3.0.0) (2022-07-19)
 
 

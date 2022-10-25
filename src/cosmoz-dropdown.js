@@ -76,6 +76,11 @@ const preventDefault = (e) => e.preventDefault(),
 				::slotted(svg) {
 					pointer-events: none;
 				}
+				@-moz-document url-prefix() {
+					#content {
+						left: auto;
+					}
+				}
 			</style>
 			<div class="anchor" part="anchor">
 				<button

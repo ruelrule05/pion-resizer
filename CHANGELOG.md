@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/neovici/cosmoz-dropdown/compare/v3.0.1...v3.0.2) (2022-10-25)
+
+
+### Bug Fixes
+
+* **cosmoz-dropdown:** correct dropdown position in Firefox ([d6cca97](https://github.com/neovici/cosmoz-dropdown/commit/d6cca973a59c37f0d94b4d9f119c07a4ccf3be3a))
+
 ## [3.0.1](https://github.com/neovici/cosmoz-dropdown/compare/v3.0.0...v3.0.1) (2022-09-20)
 
 

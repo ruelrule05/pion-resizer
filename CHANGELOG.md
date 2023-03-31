@@ -1,3 +1,10 @@
+## [3.2.0](https://github.com/neovici/cosmoz-dropdown/compare/v3.1.0...v3.2.0) (2023-03-31)
+
+
+### Features
+
+* add type def ([fabd9f8](https://github.com/neovici/cosmoz-dropdown/commit/fabd9f872904cdac0903cabc4946b840a21ef7bb))
+
 ## [3.1.0](https://github.com/neovici/cosmoz-dropdown/compare/v3.0.2...v3.1.0) (2023-03-31)
 
 

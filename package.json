@@ -46,7 +46,8 @@
 		"access": "public"
 	},
 	"files": [
-		"dist/"
+		"dist/",
+		"types"
 	],
 	"commitlint": {
 		"extends": [

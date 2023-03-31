@@ -1,8 +1,10 @@
+// eslint-disable-next-line
+/// <reference path="../types/position.d.ts" />
 import { useEffect } from 'haunted';
 import getPosition from 'position.js';
 // eslint-disable-next-line no-duplicate-imports
-import type { Placement } from 'position.js';
 import { onScrolled } from './on-scrolled';
+import type { Placement } from 'position.js';
 
 export const defaultPlacement = [
 	'bottom-left',
@@ -65,9 +67,9 @@ export const usePosition = ({
 		ro.observe(anchor);
 
 		const onReposition = () => {
-				cancelAnimationFrame(rid);
-				rid = requestAnimationFrame(reposition);
-			},
+			cancelAnimationFrame(rid);
+			rid = requestAnimationFrame(reposition);
+		},
 			offScroll = onScrolled(anchor, onReposition);
 		window.addEventListener('resize', onReposition, true);
 

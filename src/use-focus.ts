@@ -1,20 +1,29 @@
 import { useEffect, useState, useCallback } from 'haunted';
 import { useMeta } from '@neovici/cosmoz-utils/hooks/use-meta';
 
-const isFocused = t => t.matches(':focus-within');
+const isFocused = (t: Element) => t.matches(':focus-within');
 
-export const useFocus = ({ disabled, onFocus }) => {
-	const [{ focused, closed } = {}, setState] = useState(),
+interface FocusState {
+	focused?: boolean;
+	closed?: boolean;
+}
+export interface UseFocusOpts {
+	disabled?: boolean;
+	onFocus: (focused: boolean) => void;
+}
+export const useFocus = ({ disabled, onFocus }: UseFocusOpts) => {
+	const [focusState, setState] = useState<FocusState>(),
+		{ focused, closed } = focusState || {},
 		active = focused && !disabled,
 		meta = useMeta({ closed, onFocus }),
 		setClosed = useCallback(
-			closed => setState(p => ({ ...p, closed })),
+			(closed: boolean) => setState((p) => ({ ...p, closed })),
 			[]
 		),
-		onToggle = useCallback(e => {
-			const target = e.currentTarget;
+		onToggle = useCallback((e: Event) => {
+			const target = e.currentTarget as HTMLElement;
 			return isFocused(target)
-				? setState(p => ({ focused: true, closed: !p?.closed }))
+				? setState((p) => ({ focused: true, closed: !p?.closed }))
 				: target.focus();
 		}, []);
 
@@ -22,7 +31,7 @@ export const useFocus = ({ disabled, onFocus }) => {
 		if (!active) {
 			return;
 		}
-		const handler = e => {
+		const handler = (e: KeyboardEvent) => {
 			if (e.defaultPrevented) {
 				return;
 			}
@@ -44,26 +53,26 @@ export const useFocus = ({ disabled, onFocus }) => {
 		setClosed,
 		onToggle,
 		onFocus: useCallback(
-			e => {
-				const focused = isFocused(e.currentTarget);
+			(e: FocusEvent) => {
+				const focused = isFocused(e.currentTarget as HTMLElement);
 				setState({ focused });
 				meta.onFocus?.(focused);
 			},
 			[meta]
-		)
+		),
 	};
 };
 
-const fevs = ['focusin', 'focusout'];
-export const useHostFocus = host => {
+const fevs = ['focusin', 'focusout'] as const;
+export const useHostFocus = (host: HTMLElement & UseFocusOpts) => {
 	const thru = useFocus(host),
 		{ onFocus } = thru;
 
 	useEffect(() => {
 		host.setAttribute('tabindex', '-1');
-		fevs.forEach(ev => host.addEventListener(ev, onFocus));
+		fevs.forEach((ev) => host.addEventListener(ev, onFocus));
 		return () => {
-			fevs.forEach(ev => host.removeEventListener(ev, onFocus));
+			fevs.forEach((ev) => host.removeEventListener(ev, onFocus));
 		};
 	}, []);
 

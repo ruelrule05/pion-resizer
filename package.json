@@ -16,13 +16,13 @@
 	},
 	"license": "Apache-2.0",
 	"author": "",
-	"main": "src/index.js",
+	"main": "dist/index.js",
 	"directories": {
 		"test": "test"
 	},
 	"scripts": {
-		"lint": "eslint --cache --ext .js .",
-		"lint-tsc": "tsc",
+		"lint": "tsc && eslint --cache .",
+		"build": "tsc -p tsconfig.build.json",
 		"start": "wds",
 		"test": "wtr --coverage",
 		"test:watch": "wtr --watch",
@@ -46,7 +46,7 @@
 		"access": "public"
 	},
 	"files": [
-		"src/*.js"
+		"dist/"
 	],
 	"commitlint": {
 		"extends": [
@@ -59,6 +59,13 @@
 				100
 			]
 		}
+	},
+	"exports": {
+		".": "./dist/index.js",
+		"./use-focus": "./dist/use-focus.js",
+		"./use-position": "./dist/use-position.js",
+		"./src/use-focus.js": "./dist/use-focus.js",
+		"./src/use-position.js": "./dist/use-position.js"
 	},
 	"dependencies": {
 		"@neovici/cosmoz-utils": "^5.0.0",
@@ -74,13 +81,10 @@
 		"@semantic-release/changelog": "^6.0.0",
 		"@semantic-release/git": "^10.0.0",
 		"@storybook/storybook-deployer": "^2.8.5",
-		"@web/dev-server": "^0.1.28",
-		"@web/dev-server-storybook": "^0.5.1",
-		"@web/test-runner": "^0.13.0",
+		"@web/dev-server-storybook": "^0.6.0",
 		"husky": "^8.0.0",
-		"prettier": "^2.5.1",
-		"semantic-release": "^19.0.0",
-		"sinon": "^14.0.0",
-		"typescript": "^4.0.0"
+		"semantic-release": "^21.0.0",
+		"sinon": "^15.0.0",
+		"typescript": "^5.0.0"
 	}
 }

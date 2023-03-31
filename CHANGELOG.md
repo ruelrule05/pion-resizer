@@ -1,3 +1,10 @@
+## [3.3.0](https://github.com/neovici/cosmoz-dropdown/compare/v3.2.0...v3.3.0) (2023-03-31)
+
+
+### Features
+
+* adjust types ([9f74ebe](https://github.com/neovici/cosmoz-dropdown/commit/9f74ebe104720f0059a447b93decacf6d2d3c375))
+
 ## [3.2.0](https://github.com/neovici/cosmoz-dropdown/compare/v3.1.0...v3.2.0) (2023-03-31)
 
 

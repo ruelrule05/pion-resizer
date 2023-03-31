@@ -1,3 +1,20 @@
+## [3.1.0](https://github.com/neovici/cosmoz-dropdown/compare/v3.0.2...v3.1.0) (2023-03-31)
+
+
+### Features
+
+* add exports ([388c286](https://github.com/neovici/cosmoz-dropdown/commit/388c2863a9e20ae84bf501ced2cde4a0ac3925df))
+* adjust storybook ci ([d39ea01](https://github.com/neovici/cosmoz-dropdown/commit/d39ea01114afa32fbb9cced78a19b7661109d20c))
+* adjust tests ([9ae3943](https://github.com/neovici/cosmoz-dropdown/commit/9ae3943143b7b753278fc790c18b552388be11a0))
+* convert to ts ([c074f0e](https://github.com/neovici/cosmoz-dropdown/commit/c074f0e5cfd6bd4c992f8af4fa7945e12c880ba1))
+
+
+### Bug Fixes
+
+* adjust tests ([0155b9b](https://github.com/neovici/cosmoz-dropdown/commit/0155b9bbd295b465f55fa55cadf7fe5cfe19f180))
+* build ([52af772](https://github.com/neovici/cosmoz-dropdown/commit/52af772f10d555c65bd69ce9fcf9ea6512bf181f))
+* **lint:** update ([b258ce4](https://github.com/neovici/cosmoz-dropdown/commit/b258ce47c8f04ac6b8b875e1e49b96bec14207bf))
+
 ## [3.0.2](https://github.com/neovici/cosmoz-dropdown/compare/v3.0.1...v3.0.2) (2022-10-25)
 
 

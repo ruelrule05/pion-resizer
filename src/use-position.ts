@@ -1,5 +1,6 @@
 import { useEffect } from 'haunted';
-import getPosition, { Placement } from 'position.js';
+import getPosition from 'position.js';
+import type { Placement } from 'position.js';
 import { onScrolled } from './on-scrolled';
 
 export const defaultPlacement = [

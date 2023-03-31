@@ -1,5 +1,6 @@
 import { useEffect } from 'haunted';
 import getPosition from 'position.js';
+// eslint-disable-next-line no-duplicate-imports
 import type { Placement } from 'position.js';
 import { onScrolled } from './on-scrolled';
 

@@ -9,7 +9,7 @@ interface FocusState {
 }
 export interface UseFocusOpts {
 	disabled?: boolean;
-	onFocus: (focused: boolean) => void;
+	onFocus?: (focused: boolean) => void;
 }
 export const useFocus = ({ disabled, onFocus }: UseFocusOpts) => {
 	const [focusState, setState] = useState<FocusState>(),

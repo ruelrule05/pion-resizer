@@ -47,7 +47,7 @@ export const position = ({
 };
 
 interface UsePositionOpts extends Omit<PositionOpts, 'anchor'> {
-	anchor?: (() => HTMLElement) | HTMLElement | null;
+	anchor?: (() => HTMLElement | null) | HTMLElement | null;
 }
 export const usePosition = ({
 	anchor: anchorage,

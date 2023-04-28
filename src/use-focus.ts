@@ -13,8 +13,8 @@ export interface UseFocusOpts {
 }
 export const useFocus = ({ disabled, onFocus }: UseFocusOpts) => {
 	const [focusState, setState] = useState<FocusState>(),
-		{ focused, closed } = focusState || {},
-		active = focused && !disabled,
+		{ focused: _focused, closed } = focusState || {},
+		focused = _focused && !disabled,
 		meta = useMeta({ closed, onFocus }),
 		setClosed = useCallback(
 			(closed: boolean) => setState((p) => ({ ...p, closed })),
@@ -28,7 +28,7 @@ export const useFocus = ({ disabled, onFocus }: UseFocusOpts) => {
 		}, []);
 
 	useEffect(() => {
-		if (!active) {
+		if (!focused) {
 			return;
 		}
 		const handler = (e: KeyboardEvent) => {
@@ -46,10 +46,11 @@ export const useFocus = ({ disabled, onFocus }: UseFocusOpts) => {
 		};
 		document.addEventListener('keydown', handler, true);
 		return () => document.removeEventListener('keydown', handler, true);
-	}, [active]);
+	}, [focused]);
 
 	return {
-		active: active && !closed,
+		focused,
+		active: focused && !closed,
 		setClosed,
 		onToggle,
 		onFocus: useCallback(

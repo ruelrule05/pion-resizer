@@ -1,3 +1,10 @@
+## [3.4.0](https://github.com/neovici/cosmoz-dropdown/compare/v3.3.0...v3.4.0) (2023-04-28)
+
+
+### Features
+
+* **use-focus:** return focused & active ([60ea8ac](https://github.com/neovici/cosmoz-dropdown/commit/60ea8acce26e5cb0cd980c1c4cbb806ae9b53ba3))
+
 ## [3.3.0](https://github.com/neovici/cosmoz-dropdown/compare/v3.2.0...v3.3.0) (2023-03-31)
 
 

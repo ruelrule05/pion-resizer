@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'haunted';
+import { useEffect, useState, useCallback } from '@pionjs/pion';
 import { useMeta } from '@neovici/cosmoz-utils/hooks/use-meta';
 
 const isFocused = (t: Element) => t.matches(':focus-within');

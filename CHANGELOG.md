@@ -1,3 +1,14 @@
+## [4.0.0](https://github.com/neovici/cosmoz-dropdown/compare/v3.4.0...v4.0.0) (2024-01-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* Update to @pionjs/pion
+
+### Features
+
+* update to pion ([5504f65](https://github.com/neovici/cosmoz-dropdown/commit/5504f657667ace027fcba47c98e86f9faa5d6dbc))
+
 ## [3.4.0](https://github.com/neovici/cosmoz-dropdown/compare/v3.3.0...v3.4.0) (2023-04-28)
 
 

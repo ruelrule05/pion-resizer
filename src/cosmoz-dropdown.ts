@@ -1,4 +1,4 @@
-import { component, useCallback } from 'haunted';
+import { component, useCallback } from '@pionjs/pion';
 import { html, nothing, TemplateResult } from 'lit-html';
 import { when } from 'lit-html/directives/when.js';
 import { usePosition, Placement } from './use-position';

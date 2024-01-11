@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 /// <reference path="../types/position.d.ts" />
-import { useEffect } from 'haunted';
+import { useEffect } from '@pionjs/pion';
 import getPosition from 'position.js';
 // eslint-disable-next-line no-duplicate-imports
 import type { Placement } from 'position.js';

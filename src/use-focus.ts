@@ -18,7 +18,7 @@ export const useFocus = ({ disabled, onFocus }: UseFocusOpts) => {
 		meta = useMeta({ closed, onFocus }),
 		setClosed = useCallback(
 			(closed: boolean) => setState((p) => ({ ...p, closed })),
-			[]
+			[],
 		),
 		onToggle = useCallback((e: Event) => {
 			const target = e.currentTarget as HTMLElement;
@@ -59,7 +59,7 @@ export const useFocus = ({ disabled, onFocus }: UseFocusOpts) => {
 				setState({ focused });
 				meta.onFocus?.(focused);
 			},
-			[meta]
+			[meta],
 		),
 	};
 };
@@ -70,7 +70,7 @@ export const useHostFocus = (host: HTMLElement & UseFocusOpts) => {
 		{ onFocus } = thru;
 
 	useEffect(() => {
-		host.setAttribute('tabindex', '-1');
+		host.setAttribute('tabindex', '0');
 		fevs.forEach((ev) => host.addEventListener(ev, onFocus));
 		return () => {
 			fevs.forEach((ev) => host.removeEventListener(ev, onFocus));

@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/neovici/cosmoz-dropdown/compare/v4.0.0...v4.0.1) (2024-03-14)
+
+
+### Bug Fixes
+
+* change button tabindex ([84a03a6](https://github.com/neovici/cosmoz-dropdown/commit/84a03a6cc599b0ed59f5b0b70b116bcad8a37bfa))
+
 ## [4.0.0](https://github.com/neovici/cosmoz-dropdown/compare/v3.4.0...v4.0.0) (2024-01-11)
 
 

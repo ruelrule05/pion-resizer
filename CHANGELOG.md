@@ -1,3 +1,12 @@
+## [4.1.0](https://github.com/neovici/cosmoz-dropdown/compare/v4.0.1...v4.1.0) (2024-04-04)
+
+
+### Features
+
+* add storybook-static dir to .gitignore ([cbd108a](https://github.com/neovici/cosmoz-dropdown/commit/cbd108a6844953cacd1d72cfca4866e9cba2f6a4))
+* update dependencies ([d8d4732](https://github.com/neovici/cosmoz-dropdown/commit/d8d473269f34e237c9775ea3b37ed4eb0c6ebb32))
+* update semantic-release ([13d4706](https://github.com/neovici/cosmoz-dropdown/commit/13d4706774a0ad66d2c396df97f68c3c1baf802e))
+
 ## [4.0.1](https://github.com/neovici/cosmoz-dropdown/compare/v4.0.0...v4.0.1) (2024-03-14)
 
 

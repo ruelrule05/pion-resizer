@@ -69,23 +69,23 @@
 		"./src/use-position.js": "./dist/use-position.js"
 	},
 	"dependencies": {
-		"@neovici/cosmoz-utils": "^6.0.0",
-		"@pionjs/pion": "^2.0.0",
-		"position.js": "^0.3.0"
+		"@neovici/cosmoz-utils": "^6.8.1",
+		"@pionjs/pion": "^2.5.2",
+		"position.js": "^1.1.0"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^18.0.0",
-		"@commitlint/config-conventional": "^18.0.0",
-		"@neovici/cfg": "^1.15.2",
+		"@commitlint/cli": "^19.2.1",
+		"@commitlint/config-conventional": "^19.1.0",
+		"@neovici/cfg": "^1.51.0",
 		"@open-wc/testing": "^4.0.0",
 		"@semantic-release/changelog": "^6.0.0",
 		"@semantic-release/git": "^10.0.0",
 		"@storybook/storybook-deployer": "^2.8.5",
 		"@types/mocha": "^10.0.6",
 		"@web/dev-server-storybook": "^2.0.0",
-		"husky": "^8.0.0",
-		"semantic-release": "^22.0.0",
+		"husky": "^9.0.11",
+		"semantic-release": "^23.0.7",
 		"sinon": "^17.0.0",
-		"typescript": "^5.0.0"
+		"typescript": "^5.4.3"
 	}
 }

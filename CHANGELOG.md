@@ -1,3 +1,12 @@
+## [4.2.0](https://github.com/neovici/cosmoz-dropdown/compare/v4.1.0...v4.2.0) (2024-04-04)
+
+
+### Features
+
+* add storybook dependencies ([9807ca0](https://github.com/neovici/cosmoz-dropdown/commit/9807ca0967694339f6be44f3843a34610d80a2d3))
+* add storybook settings and stories ([64afb6c](https://github.com/neovici/cosmoz-dropdown/commit/64afb6c2a06b985636a3c939449e0cefafadd68f))
+* rezolve `IOptions` lint error ([2269eb3](https://github.com/neovici/cosmoz-dropdown/commit/2269eb37cf0734197513d3bd3f3bb284a578ee51))
+
 ## [4.1.0](https://github.com/neovici/cosmoz-dropdown/compare/v4.0.1...v4.1.0) (2024-04-04)
 
 

@@ -26,8 +26,10 @@
 		"start": "wds",
 		"test": "wtr --coverage",
 		"test:watch": "wtr --watch",
-		"storybook:build": "build-storybook",
+		"storybook:start": "storybook dev -p 8000",
+		"storybook:build": "storybook build",
 		"storybook:deploy": "storybook-to-ghpages",
+		"storybook:preview": "npm run storybook:build && http-server -d ./storybook-static/",
 		"prepare": "husky install"
 	},
 	"release": {
@@ -80,11 +82,19 @@
 		"@open-wc/testing": "^4.0.0",
 		"@semantic-release/changelog": "^6.0.0",
 		"@semantic-release/git": "^10.0.0",
+		"@storybook/addon-essentials": "^7.0.0",
+		"@storybook/addon-links": "^7.0.0",
 		"@storybook/storybook-deployer": "^2.8.5",
+		"@storybook/web-components": "7.6.17",
 		"@types/mocha": "^10.0.6",
-		"@web/dev-server-storybook": "^2.0.0",
+		"@web/storybook-builder": "^0.1.9",
+		"@web/storybook-framework-web-components": "^0.1.1",
+		"esbuild": "^0.20.2",
+		"http-server": "^14.1.1",
 		"husky": "^9.0.11",
+		"rollup-plugin-esbuild": "^6.1.1",
 		"semantic-release": "^23.0.7",
+		"storybook": "^7.0.0",
 		"sinon": "^17.0.0",
 		"typescript": "^5.4.3"
 	}

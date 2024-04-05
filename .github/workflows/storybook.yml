@@ -1,34 +1,10 @@
 ---
-name: Storybook CD
+name: Storybook
 on:
   push:
     branches:
       - master
 jobs:
   storybook:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 19
-          cache: 'npm'
-
-      - name: Install
-        run: npm ci
-
-      - name: Install
-        run: npm run build
-
-      - name: Fix import
-        run: sed -i 's/..\/src/..\/dist/g' stories/*.stories.js
-
-      - name: Deploy storybook
-        run: npm run storybook:deploy -- --ci
-        env:
-          GH_TOKEN: Neovici:${{ secrets.GITHUB_TOKEN }}
+    uses: Neovici/cfg/.github/workflows/story.yml@master
+    secrets: inherit

@@ -1,3 +1,15 @@
+## [4.3.0](https://github.com/neovici/cosmoz-dropdown/compare/v4.2.0...v4.3.0) (2024-04-05)
+
+
+### Features
+
+* add DropdownWithBug story ([a4316c6](https://github.com/neovici/cosmoz-dropdown/commit/a4316c6dd82ab3754aa40afea2c1bd319c9c3851))
+
+
+### Bug Fixes
+
+* make the storybook github workflow work ([b971cb8](https://github.com/neovici/cosmoz-dropdown/commit/b971cb886f5d389c4df2c97a948babbafb19cf5d))
+
 ## [4.2.0](https://github.com/neovici/cosmoz-dropdown/compare/v4.1.0...v4.2.0) (2024-04-04)
 
 

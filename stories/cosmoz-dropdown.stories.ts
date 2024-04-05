@@ -36,3 +36,30 @@ export const DropdownMenu: Story = {
 		</cosmoz-dropdown-menu>`;
 	},
 };
+
+export const DropdownWithBug: Story = {
+	render: () => {
+		return html`<style>
+				.wrapper-with-bug {
+					position: relative;
+					z-index: 2;
+					width: 300px;
+					height: 300px;
+					top: 100px;
+					left: 100px;
+					margin: 0 auto;
+					background-color: blueviolet;
+					transform: translate3d(0, 0, 0);
+				}
+			</style>
+			<div class="wrapper-with-bug">
+				<cosmoz-dropdown>
+					<div>Item 1</div>
+					<div>Item 2</div>
+					<div>Item 3</div>
+					<div>Item 4</div>
+					<div>Item 5</div>
+				</cosmoz-dropdown>
+			</div>`;
+	},
+};

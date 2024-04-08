@@ -1,6 +1,7 @@
 import { component, useCallback } from '@pionjs/pion';
 import { html, nothing, TemplateResult } from 'lit-html';
 import { when } from 'lit-html/directives/when.js';
+import { ref } from 'lit-html/directives/ref.js';
 import { usePosition, Placement } from './use-position';
 import { useHostFocus, UseFocusOpts } from './use-focus';
 
@@ -15,6 +16,7 @@ interface ContentProps {
 const Content = (host: HTMLElement & ContentProps) => {
 	const { anchor, placement, render } = host;
 	usePosition({ anchor, placement, host });
+
 	return html` <style>
 			:host {
 				position: fixed;
@@ -43,6 +45,12 @@ interface DropdownProps
 		Pick<ContentProps, 'placement' | 'render'> {}
 
 const Dropdown = (host: HTMLElement & DropdownProps) => {
+	const dialogChanged = (dialog?: HTMLDialogElement) => {
+		requestAnimationFrame(() => {
+			dialog?.showModal();
+		});
+	};
+
 	const { placement, render } = host,
 		anchor = useCallback(() => host.shadowRoot!.querySelector('.anchor'), []),
 		{ active, onToggle } = useHostFocus(host);
@@ -90,6 +98,10 @@ const Dropdown = (host: HTMLElement & DropdownProps) => {
 					left: auto;
 				}
 			}
+
+			#content {
+				position: absolute;
+			}
 		</style>
 		<div class="anchor" part="anchor">
 			<button
@@ -104,16 +116,17 @@ const Dropdown = (host: HTMLElement & DropdownProps) => {
 		${when(
 			active,
 			() =>
-				html` <cosmoz-dropdown-content
-					id="content"
-					part="content"
-					exportparts="wrap, content"
-					.anchor=${anchor}
-					.placement=${placement}
-					.render=${render}
-				>
-					<slot></slot>
-				</cosmoz-dropdown-content>`
+				html`<dialog ${ref(dialogChanged)} id="content">
+					<cosmoz-dropdown-content
+						part="content"
+						exportparts="wrap, content"
+						.anchor=${anchor}
+						.placement=${placement}
+						.render=${render}
+					>
+						<slot></slot>
+					</cosmoz-dropdown-content>
+				</dialog>`,
 		)}`;
 };
 
@@ -131,7 +144,9 @@ const List = () => html`
 			padding: 10px 24px;
 			background: transparent;
 			color: var(--cosmoz-dropdown-menu-color, #101010);
-			transition: background 0.25s, color 0.25s;
+			transition:
+				background 0.25s,
+				color 0.25s;
 			border: none;
 			cursor: pointer;
 			font-size: 14px;
@@ -158,18 +173,19 @@ const List = () => html`
 
 type MenuProps = Pick<DropdownProps, 'placement'>;
 
-const Menu = ({ placement }: MenuProps) => html` <cosmoz-dropdown
-	.placement=${placement}
-	part="dropdown"
-	exportparts="anchor, button, content, wrap, dropdown"
->
-	<slot name="button" slot="button"></slot>
-	<cosmoz-dropdown-list><slot></slot></cosmoz-dropdown-list>
-</cosmoz-dropdown>`;
+const Menu = ({ placement }: MenuProps) =>
+	html` <cosmoz-dropdown
+		.placement=${placement}
+		part="dropdown"
+		exportparts="anchor, button, content, wrap, dropdown"
+	>
+		<slot name="button" slot="button"></slot>
+		<cosmoz-dropdown-list><slot></slot></cosmoz-dropdown-list>
+	</cosmoz-dropdown>`;
 
 customElements.define(
 	'cosmoz-dropdown-content',
-	component<ContentProps>(Content)
+	component<ContentProps>(Content),
 );
 customElements.define('cosmoz-dropdown', component<DropdownProps>(Dropdown));
 customElements.define('cosmoz-dropdown-list', component(List));

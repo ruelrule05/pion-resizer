@@ -38,6 +38,7 @@ export const DropdownMenu: Story = {
 };
 
 export const DropdownWithBug: Story = {
+	name: 'Dropdown with Bug (1920 x 1080)',
 	render: () => {
 		return html`<style>
 				.wrapper-with-bug {
@@ -51,6 +52,16 @@ export const DropdownWithBug: Story = {
 					background-color: blueviolet;
 					transform: translate3d(0, 0, 0);
 				}
+				.overlay {
+					width: 600px;
+					height: 600px;
+					background-color: green;
+					transform: translate3d(0, 0, 0);
+					position: absolute;
+					top: 150px;
+					left: 700px;
+					z-index: 3;
+				}
 			</style>
 			<div class="wrapper-with-bug">
 				<cosmoz-dropdown>
@@ -60,6 +71,7 @@ export const DropdownWithBug: Story = {
 					<div>Item 4</div>
 					<div>Item 5</div>
 				</cosmoz-dropdown>
-			</div>`;
+			</div>
+			<div class="overlay"></div>`;
 	},
 };

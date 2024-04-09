@@ -38,7 +38,7 @@ export const DropdownMenu: Story = {
 };
 
 export const DropdownWithBug: Story = {
-	name: 'Dropdown with Bug (1920 x 1080) - Fixed on Chrome',
+	name: 'Dropdown with Bug - fixed on Chrome',
 	render: () => {
 		return html`<style>
 				.wrapper-with-bug {
@@ -48,18 +48,17 @@ export const DropdownWithBug: Story = {
 					height: 300px;
 					top: 100px;
 					left: 100px;
-					margin: 0 auto;
 					background-color: blueviolet;
 					transform: translate3d(0, 0, 0);
 				}
 				.overlay {
-					width: 600px;
-					height: 600px;
+					width: 350px;
+					height: 350px;
 					background-color: green;
 					transform: translate3d(0, 0, 0);
 					position: absolute;
 					top: 150px;
-					left: 700px;
+					left: 100px;
 					z-index: 3;
 				}
 			</style>

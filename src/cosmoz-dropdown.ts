@@ -45,9 +45,18 @@ interface DropdownProps
 		Pick<ContentProps, 'placement' | 'render'> {}
 
 const Dropdown = (host: HTMLElement & DropdownProps) => {
-	const dialogChanged = (dialog?: HTMLDialogElement) => {
+	const supportsPopover = () => {
+		// eslint-disable-next-line no-prototype-builtins
+		return HTMLElement.prototype.hasOwnProperty('popover');
+	};
+
+	const popoverChanged = (popover?: Element) => {
+		const popoverElement = popover as HTMLElement;
+
 		requestAnimationFrame(() => {
-			dialog?.showModal();
+			if (supportsPopover()) {
+				popoverElement?.showPopover();
+			}
 		});
 	};
 
@@ -98,9 +107,12 @@ const Dropdown = (host: HTMLElement & DropdownProps) => {
 					left: auto;
 				}
 			}
-
-			#content {
-				position: absolute;
+			#content:popover-open {
+				background-color: transparent;
+				width: 0;
+				height: 0;
+				inset: none;
+				border: none;
 			}
 		</style>
 		<div class="anchor" part="anchor">
@@ -116,7 +128,7 @@ const Dropdown = (host: HTMLElement & DropdownProps) => {
 		${when(
 			active,
 			() =>
-				html`<dialog ${ref(dialogChanged)} id="content">
+				html`<div ${ref(popoverChanged)} popover id="content">
 					<cosmoz-dropdown-content
 						part="content"
 						exportparts="wrap, content"
@@ -126,7 +138,7 @@ const Dropdown = (host: HTMLElement & DropdownProps) => {
 					>
 						<slot></slot>
 					</cosmoz-dropdown-content>
-				</dialog>`,
+				</div>`,
 		)}`;
 };
 

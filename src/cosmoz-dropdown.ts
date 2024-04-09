@@ -41,6 +41,15 @@ const Content = (host: HTMLElement & ContentProps) => {
 				padding: var(--cosmoz-dropdown-spacing, 0px);
 				z-index: var(--cosmoz-dropdown-z-index, 2);
 			}
+			:host(:popover-open) {
+				margin: 0;
+				border: 0;
+				background: var(--cosmoz-dropdown-bg-color, #fff);
+				box-shadow: var(
+					--cosmoz-dropdown-box-shadow,
+					0px 3px 4px 2px rgba(0, 0, 0, 0.1)
+				);
+			}
 			.wrap {
 				background: var(--cosmoz-dropdown-bg-color, #fff);
 				box-shadow: var(
@@ -106,15 +115,6 @@ const Dropdown = (host: HTMLElement & DropdownProps) => {
 				#content {
 					left: auto;
 				}
-			}
-			#content:popover-open {
-				margin: 0;
-				border: 0;
-				background: var(--cosmoz-dropdown-bg-color, #fff);
-				box-shadow: var(
-					--cosmoz-dropdown-box-shadow,
-					0px 3px 4px 2px rgba(0, 0, 0, 0.1)
-				);
 			}
 		</style>
 		<div class="anchor" part="anchor">

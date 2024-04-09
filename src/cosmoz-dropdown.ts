@@ -13,6 +13,21 @@ interface ContentProps {
 	render?: () => TemplateResult;
 }
 
+const supportsPopover = () => {
+	// eslint-disable-next-line no-prototype-builtins
+	return HTMLElement.prototype.hasOwnProperty('popover');
+};
+
+const showPopover = (popover?: Element) => {
+	const popoverElement = popover as HTMLElement;
+
+	if (supportsPopover()) {
+		requestAnimationFrame(() => {
+			popoverElement?.showPopover();
+		});
+	}
+};
+
 const Content = (host: HTMLElement & ContentProps) => {
 	const { anchor, placement, render } = host;
 	usePosition({ anchor, placement, host });
@@ -45,21 +60,6 @@ interface DropdownProps
 		Pick<ContentProps, 'placement' | 'render'> {}
 
 const Dropdown = (host: HTMLElement & DropdownProps) => {
-	const supportsPopover = () => {
-		// eslint-disable-next-line no-prototype-builtins
-		return HTMLElement.prototype.hasOwnProperty('popover');
-	};
-
-	const popoverChanged = (popover?: Element) => {
-		const popoverElement = popover as HTMLElement;
-
-		requestAnimationFrame(() => {
-			if (supportsPopover()) {
-				popoverElement?.showPopover();
-			}
-		});
-	};
-
 	const { placement, render } = host,
 		anchor = useCallback(() => host.shadowRoot!.querySelector('.anchor'), []),
 		{ active, onToggle } = useHostFocus(host);
@@ -128,7 +128,7 @@ const Dropdown = (host: HTMLElement & DropdownProps) => {
 		${when(
 			active,
 			() =>
-				html`<div ${ref(popoverChanged)} popover id="content">
+				html`<div ${ref(showPopover)} popover id="content">
 					<cosmoz-dropdown-content
 						part="content"
 						exportparts="wrap, content"

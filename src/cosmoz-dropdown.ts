@@ -108,11 +108,13 @@ const Dropdown = (host: HTMLElement & DropdownProps) => {
 				}
 			}
 			#content:popover-open {
-				background-color: transparent;
-				width: 0;
-				height: 0;
-				inset: none;
-				border: none;
+				margin: 0;
+				border: 0;
+				background: var(--cosmoz-dropdown-bg-color, #fff);
+				box-shadow: var(
+					--cosmoz-dropdown-box-shadow,
+					0px 3px 4px 2px rgba(0, 0, 0, 0.1)
+				);
 			}
 		</style>
 		<div class="anchor" part="anchor">
@@ -128,17 +130,18 @@ const Dropdown = (host: HTMLElement & DropdownProps) => {
 		${when(
 			active,
 			() =>
-				html`<div ${ref(showPopover)} popover id="content">
-					<cosmoz-dropdown-content
-						part="content"
-						exportparts="wrap, content"
-						.anchor=${anchor}
-						.placement=${placement}
-						.render=${render}
-					>
-						<slot></slot>
-					</cosmoz-dropdown-content>
-				</div>`,
+				html`<cosmoz-dropdown-content
+					${ref(showPopover)}
+					popover
+					id="content"
+					part="content"
+					exportparts="wrap, content"
+					.anchor=${anchor}
+					.placement=${placement}
+					.render=${render}
+				>
+					<slot></slot>
+				</cosmoz-dropdown-content>`,
 		)}`;
 };
 

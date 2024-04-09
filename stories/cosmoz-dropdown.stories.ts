@@ -38,7 +38,7 @@ export const DropdownMenu: Story = {
 };
 
 export const DropdownWithBug: Story = {
-	name: 'Dropdown with Bug (1920 x 1080)',
+	name: 'Dropdown with Bug (1920 x 1080) - Fixed on Chrome',
 	render: () => {
 		return html`<style>
 				.wrapper-with-bug {

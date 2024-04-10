@@ -1,3 +1,21 @@
+## [4.4.0](https://github.com/neovici/cosmoz-dropdown/compare/v4.3.0...v4.4.0) (2024-04-10)
+
+
+### Features
+
+* add requested changes ([2dd31de](https://github.com/neovici/cosmoz-dropdown/commit/2dd31de91748263da91cba79999e672e2257dccc))
+* move `popover` attribute ([7dcc348](https://github.com/neovici/cosmoz-dropdown/commit/7dcc34850cbda9cae3e3059632fba64ebbaceedd))
+* open dialog programmatically ([cb6c629](https://github.com/neovici/cosmoz-dropdown/commit/cb6c62972b3112c07527eb7dbc5b88bcf8932232))
+* rename story ([502fc28](https://github.com/neovici/cosmoz-dropdown/commit/502fc2853bcf747998630b3ca41d339436875667))
+* update story with bug ([6916618](https://github.com/neovici/cosmoz-dropdown/commit/6916618d1f60c0ddc1911da7f4cc83d1ded09d94))
+* use `:host(:popover-open)` selector ([5ecb921](https://github.com/neovici/cosmoz-dropdown/commit/5ecb92132c231d579b0fa05959c4f65d7bcfbe06))
+* use `popover` instead of `<dialog>` ([6620f87](https://github.com/neovici/cosmoz-dropdown/commit/6620f87e054fd20ccab484b278d28971c96f035b))
+
+
+### Bug Fixes
+
+* show box shadow in Chrome ([e6605b5](https://github.com/neovici/cosmoz-dropdown/commit/e6605b5acf5e966cea58383bc538a410ef47bcca))
+
 ## [4.3.0](https://github.com/neovici/cosmoz-dropdown/compare/v4.2.0...v4.3.0) (2024-04-05)
 
 

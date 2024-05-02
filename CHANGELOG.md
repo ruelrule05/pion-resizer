@@ -1,3 +1,10 @@
+## [4.4.1](https://github.com/neovici/cosmoz-dropdown/compare/v4.4.0...v4.4.1) (2024-05-02)
+
+
+### Bug Fixes
+
+* remove the popover padding ([#24](https://github.com/neovici/cosmoz-dropdown/issues/24)) ([10c3437](https://github.com/neovici/cosmoz-dropdown/commit/10c3437e893fedb6101a57ac071e31c8fd957c8a))
+
 ## [4.4.0](https://github.com/neovici/cosmoz-dropdown/compare/v4.3.0...v4.4.0) (2024-04-10)
 
 

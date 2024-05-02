@@ -44,8 +44,8 @@ const Content = (host: HTMLElement & ContentProps) => {
 			:host(:popover-open) {
 				margin: 0;
 				border: 0;
-				/* The padding is needed to show the box shadow in Chrome */
-				padding: 4px;
+				padding: 0;
+				overflow: visible;
 			}
 			.wrap {
 				background: var(--cosmoz-dropdown-bg-color, #fff);

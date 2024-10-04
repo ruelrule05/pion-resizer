@@ -1,3 +1,10 @@
+## [4.4.2](https://github.com/neovici/cosmoz-dropdown/compare/v4.4.1...v4.4.2) (2024-10-04)
+
+
+### Bug Fixes
+
+* **use-position:** add if rule when element end up outside viewport ([f36aced](https://github.com/neovici/cosmoz-dropdown/commit/f36acedeb5ffb6e944e3a39d079aec4a6c374ed2))
+
 ## [4.4.1](https://github.com/neovici/cosmoz-dropdown/compare/v4.4.0...v4.4.1) (2024-05-02)
 
 

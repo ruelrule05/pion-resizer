@@ -39,7 +39,11 @@ export const position = ({
 			offsetParent: confinement,
 		}),
 		{ style } = host;
-	style.left = offset.left + 'px';
+	if (offset.left < 0) {
+		style.left = '0px';
+	} else {
+		style.left = offset.left + 'px';
+	}
 	style.top = offset.top + 'px';
 	if (limit) {
 		style.minWidth = Math.max(anchorBounds.width, hostBounds.width) + 'px';

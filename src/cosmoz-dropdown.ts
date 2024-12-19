@@ -1,14 +1,20 @@
-import { component, useCallback, css } from '@pionjs/pion';
-import { html } from 'lit-html';
+import { component, css } from '@pionjs/pion';
+import { html, nothing } from 'lit-html';
 import { when } from 'lit-html/directives/when.js';
+import { ref } from 'lit-html/directives/ref.js';
+import { styleMap } from 'lit-html/directives/style-map.js';
+import { guard } from 'lit-html/directives/guard.js';
 import { useHostFocus, UseFocusOpts } from './use-focus';
-import { Content, Props as ContentProps } from './cosmoz-dropdown-content';
+import { Content } from './cosmoz-dropdown-content';
+import { useFloating, Placement, Strategy } from './use-floating';
 
 const preventDefault = <T extends Event>(e: T) => e.preventDefault();
 
-export interface Props
-	extends UseFocusOpts,
-		Pick<ContentProps, 'placement' | 'render'> {}
+export interface Props extends UseFocusOpts {
+	placement?: Placement;
+	strategy?: Strategy;
+	render: () => unknown;
+}
 
 const style = css`
 	.anchor {
@@ -57,16 +63,16 @@ const style = css`
 `;
 
 const Dropdown = (host: HTMLElement & Props) => {
-	const { placement, render } = host;
-	const anchor = useCallback(
-		() => host.shadowRoot!.querySelector('.anchor'),
-		[],
-	);
+	const { placement, strategy, render } = host;
 	const { active, onToggle } = useHostFocus(host);
-	return html` <div class="anchor" part="anchor">
+	const { styles, setReference, setFloating } = useFloating({
+		placement,
+		strategy,
+	});
+	return html` <div class="anchor" part="anchor" ${ref(setReference)}>
 			<button
-				@click=${onToggle}
 				@mousedown=${preventDefault}
+				@click=${onToggle}
 				part="button"
 				id="dropdownButton"
 			>
@@ -81,12 +87,14 @@ const Dropdown = (host: HTMLElement & Props) => {
 					id="content"
 					part="content"
 					exportparts="wrap, content"
-					.anchor=${anchor}
-					.placement=${placement}
-					.render=${render}
+					style="${styleMap(styles)}"
 					@connected=${(e: Event) => (e.target as HTMLElement).showPopover?.()}
-					><slot></slot
-				></cosmoz-dropdown-content> `,
+					${ref(setFloating)}
+					><slot></slot>${guard(
+						[render],
+						() => render?.() || nothing,
+					)}</cosmoz-dropdown-content
+				> `,
 		)}`;
 };
 customElements.define(

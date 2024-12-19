@@ -1,13 +1,6 @@
 import { component, css } from '@pionjs/pion';
-import { usePosition, Placement } from './use-position';
-import { html, nothing, TemplateResult } from 'lit-html';
+import { html } from 'lit-html';
 import { connectable } from './connectable';
-
-export interface Props {
-	anchor: HTMLElement;
-	placement?: Placement;
-	render?: () => TemplateResult;
-}
 
 const style = css`
 	:host {
@@ -36,16 +29,10 @@ const style = css`
 	}
 `;
 
-export const Content = (host: HTMLElement & Props) => {
-	const { anchor, placement, render } = host;
-	usePosition({ anchor, placement, host });
-
-	return html`<div class="wrap" part="wrap">
-		<slot></slot>${render?.() || nothing}
-	</div>`;
-};
+export const Content = () =>
+	html`<div class="wrap" part="wrap"><slot></slot></div>`;
 
 customElements.define(
 	'cosmoz-dropdown-content',
-	connectable(component<Props>(Content, { styleSheets: [style] })),
+	connectable(component(Content, { styleSheets: [style] })),
 );

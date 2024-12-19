@@ -30,7 +30,7 @@
 		"storybook:build": "storybook build",
 		"storybook:deploy": "storybook-to-ghpages",
 		"storybook:preview": "npm run storybook:build && http-server -d ./storybook-static/",
-		"prepare": "husky install"
+		"prepare": "husky"
 	},
 	"release": {
 		"plugins": [
@@ -94,8 +94,8 @@
 		"http-server": "^14.1.1",
 		"husky": "^9.0.11",
 		"rollup-plugin-esbuild": "^6.1.1",
-		"semantic-release": "^23.0.7",
-		"sinon": "^17.0.0",
+		"semantic-release": "^24.0.0",
+		"sinon": "^19.0.0",
 		"storybook": "^7.0.0",
 		"typescript": "^5.4.3"
 	}

@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from '@pionjs/pion';
-import { autoUpdate, computePosition, flip, shift } from '@floating-ui/dom';
-import type {
+import {
+	autoUpdate,
+	computePosition,
+	flip,
+	shift,
 	ComputePositionReturn,
 	ComputePositionConfig,
 	Placement,

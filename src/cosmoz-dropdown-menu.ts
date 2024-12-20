@@ -40,14 +40,14 @@ const style = css`
 	}
 `;
 
-const List = () => html` <slot></slot> `;
+export const List = () => html` <slot></slot> `;
 customElements.define(
 	'cosmoz-dropdown-list',
 	component(List, { styleSheets: [style] }),
 );
 
 type MenuProps = Pick<DropdownProps, 'placement'>;
-const Menu = ({ placement }: MenuProps) =>
+export const Menu = ({ placement }: MenuProps) =>
 	html` <cosmoz-dropdown
 		.placement=${placement}
 		part="dropdown"

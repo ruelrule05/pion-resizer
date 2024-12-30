@@ -1,3 +1,14 @@
+## [5.0.0](https://github.com/neovici/cosmoz-dropdown/compare/v4.4.2...v5.0.0) (2024-12-30)
+
+### ⚠ BREAKING CHANGES
+
+* Implement  `floating-ui` (useFloating) integration
+
+### Features
+
+* implement floating-ui integration ([4154ea5](https://github.com/neovici/cosmoz-dropdown/commit/4154ea52611d9505924b83d9acf21813ac1f2b31))
+* refactor & implement connectable ([6a04b01](https://github.com/neovici/cosmoz-dropdown/commit/6a04b01f1085dafb91634c63f6edfec523c0950d))
+
 ## [4.4.2](https://github.com/neovici/cosmoz-dropdown/compare/v4.4.1...v4.4.2) (2024-10-04)
 
 

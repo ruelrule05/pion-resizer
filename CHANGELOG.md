@@ -1,3 +1,9 @@
+## [5.2.0](https://github.com/neovici/cosmoz-dropdown/compare/v5.1.0...v5.2.0) (2024-12-30)
+
+### Features
+
+* **use-floating:** export defaultMiddleware ([f49fb44](https://github.com/neovici/cosmoz-dropdown/commit/f49fb4464809531ed52b7efa7f1f1eaf61905c92))
+
 ## [5.1.0](https://github.com/neovici/cosmoz-dropdown/compare/v5.0.0...v5.1.0) (2024-12-30)
 
 ### Features

@@ -1,3 +1,9 @@
+## [5.3.0](https://github.com/neovici/cosmoz-dropdown/compare/v5.2.0...v5.3.0) (2024-12-30)
+
+### Features
+
+* export floating-ui middlewares ([02d3883](https://github.com/neovici/cosmoz-dropdown/commit/02d38833e592adcd86651b5bec15bced74a0294c))
+
 ## [5.2.0](https://github.com/neovici/cosmoz-dropdown/compare/v5.1.0...v5.2.0) (2024-12-30)
 
 ### Features

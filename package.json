@@ -67,6 +67,8 @@
     ".": "./dist/index.js",
     "./use-focus": "./dist/use-focus.js",
     "./use-position": "./dist/use-position.js",
+    "./use-floating": "./dist/use-floating.js",
+    "./connectable": "./dist/connectable.js",
     "./src/use-focus.js": "./dist/use-focus.js",
     "./src/use-position.js": "./dist/use-position.js"
   },

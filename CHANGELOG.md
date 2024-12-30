@@ -1,3 +1,9 @@
+## [5.1.0](https://github.com/neovici/cosmoz-dropdown/compare/v5.0.0...v5.1.0) (2024-12-30)
+
+### Features
+
+* more exports ([1a3f030](https://github.com/neovici/cosmoz-dropdown/commit/1a3f030901cb70281ef0fd3db585f99f0d2d0fd9))
+
 ## [5.0.0](https://github.com/neovici/cosmoz-dropdown/compare/v4.4.2...v5.0.0) (2024-12-30)
 
 ### ⚠ BREAKING CHANGES

@@ -10,7 +10,7 @@ import {
 	Strategy,
 } from '@floating-ui/dom';
 
-const defaultMiddleware = [
+export const defaultMiddleware = [
 	flip({
 		fallbackAxisSideDirection: 'start',
 		crossAxis: false,

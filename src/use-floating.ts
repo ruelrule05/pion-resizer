@@ -31,6 +31,7 @@ export const useFloating = ({
 }: UseFloating) => {
 	const [[reference, floating], setRefs] = useState<[Element?, Element?]>([]);
 	const [position, setPosition] = useState<ComputePositionReturn>();
+
 	useEffect(() => {
 		if (!reference || !(floating instanceof HTMLElement)) {
 			setPosition(undefined);

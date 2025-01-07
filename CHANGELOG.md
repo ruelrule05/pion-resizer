@@ -1,3 +1,9 @@
+## [5.4.0](https://github.com/neovici/cosmoz-dropdown/compare/v5.3.0...v5.4.0) (2025-01-07)
+
+### Features
+
+* **cosmoz-dropdown:** add middleware support ([1d479a0](https://github.com/neovici/cosmoz-dropdown/commit/1d479a020b2b856f8a1477ef2e8798676d8e1890))
+
 ## [5.3.0](https://github.com/neovici/cosmoz-dropdown/compare/v5.2.0...v5.3.0) (2024-12-30)
 
 ### Features

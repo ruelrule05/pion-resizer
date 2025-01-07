@@ -6,7 +6,7 @@ import { styleMap } from 'lit-html/directives/style-map.js';
 import { guard } from 'lit-html/directives/guard.js';
 import { useHostFocus, UseFocusOpts } from './use-focus';
 import { Content } from './cosmoz-dropdown-content';
-import { useFloating, UseFloating, Placement, Strategy } from './use-floating';
+import { useFloating, UseFloating } from './use-floating';
 
 const preventDefault = <T extends Event>(e: T) => e.preventDefault();
 

@@ -6,13 +6,11 @@ import { styleMap } from 'lit-html/directives/style-map.js';
 import { guard } from 'lit-html/directives/guard.js';
 import { useHostFocus, UseFocusOpts } from './use-focus';
 import { Content } from './cosmoz-dropdown-content';
-import { useFloating, Placement, Strategy } from './use-floating';
+import { useFloating, UseFloating } from './use-floating';
 
 const preventDefault = <T extends Event>(e: T) => e.preventDefault();
 
-export interface Props extends UseFocusOpts {
-	placement?: Placement;
-	strategy?: Strategy;
+export interface Props extends UseFocusOpts, UseFloating {
 	render: () => unknown;
 }
 
@@ -63,11 +61,12 @@ const style = css`
 `;
 
 const Dropdown = (host: HTMLElement & Props) => {
-	const { placement, strategy, render } = host;
+	const { placement, strategy, middleware, render } = host;
 	const { active, onToggle } = useHostFocus(host);
 	const { styles, setReference, setFloating } = useFloating({
 		placement,
 		strategy,
+		middleware,
 	});
 	return html` <div class="anchor" part="anchor" ${ref(setReference)}>
 			<button

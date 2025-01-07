@@ -20,7 +20,7 @@ export const defaultMiddleware = [
 	shift(),
 ];
 
-interface UseFloating
+export interface UseFloating
 	extends Pick<
 		ComputePositionConfig,
 		'placement' | 'strategy' | 'middleware'

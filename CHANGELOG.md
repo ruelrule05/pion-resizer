@@ -1,3 +1,13 @@
+## [6.0.0](https://github.com/neovici/cosmoz-dropdown/compare/v5.4.0...v6.0.0) (2025-02-07)
+
+### ⚠ BREAKING CHANGES
+
+* Cleanup and remove usePosition and position.js module
+
+### Code Refactoring
+
+* cleanup and remove usePosition ([9c4d0ca](https://github.com/neovici/cosmoz-dropdown/commit/9c4d0ca004a28de9f966a969425db1e15a9ff874))
+
 ## [5.4.0](https://github.com/neovici/cosmoz-dropdown/compare/v5.3.0...v5.4.0) (2025-01-07)
 
 ### Features

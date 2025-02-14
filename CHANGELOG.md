@@ -1,3 +1,9 @@
+## [6.1.0](https://github.com/neovici/cosmoz-dropdown/compare/v6.0.0...v6.1.0) (2025-02-14)
+
+### Features
+
+* **use-floating:** separate reference and floating ([ab243b9](https://github.com/neovici/cosmoz-dropdown/commit/ab243b940f54edec2e6870fd600a35b77876a35e))
+
 ## [6.0.0](https://github.com/neovici/cosmoz-dropdown/compare/v5.4.0...v6.0.0) (2025-02-07)
 
 ### ⚠ BREAKING CHANGES

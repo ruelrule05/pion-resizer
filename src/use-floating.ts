@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from '@pionjs/pion';
+import { useEffect, useMemo, useState } from '@pionjs/pion';
 import {
 	autoUpdate,
 	computePosition,
@@ -30,8 +30,9 @@ export const useFloating = ({
 	placement = 'bottom-start',
 	strategy,
 	middleware = defaultMiddleware,
-}: UseFloating) => {
-	const [[reference, floating], setRefs] = useState<[Element?, Element?]>([]);
+}: UseFloating | undefined = {}) => {
+	const [reference, setReference] = useState<Element>();
+	const [floating, setFloating] = useState<Element>();
 	const [position, setPosition] = useState<ComputePositionReturn>();
 
 	useEffect(() => {
@@ -49,11 +50,8 @@ export const useFloating = ({
 	}, [reference, floating, placement, strategy, middleware]);
 
 	return {
-		setReference: useCallback(
-			(el?: Element) => setRefs(([, _]) => [el, _]),
-			[],
-		),
-		setFloating: useCallback((el?: Element) => setRefs(([_]) => [_, el]), []),
+		setReference,
+		setFloating,
 		styles: useMemo(
 			() =>
 				position ? { left: `${position.x}px`, top: `${position.y}px` } : {},

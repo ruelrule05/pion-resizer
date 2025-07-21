@@ -1,3 +1,9 @@
+## [6.2.0](https://github.com/neovici/cosmoz-dropdown/compare/v6.1.0...v6.2.0) (2025-07-21)
+
+### Features
+
+* new automate workflow ([8465258](https://github.com/neovici/cosmoz-dropdown/commit/84652588d1c2704157e412a809b5ecfff2871d5c))
+
 ## [6.1.0](https://github.com/neovici/cosmoz-dropdown/compare/v6.0.0...v6.1.0) (2025-02-14)
 
 ### Features

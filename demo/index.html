@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+</head>
+<body>
+	<div id="demo"></div>
+
+	<script type="module">
+		import { html, render } from 'lit';
+		import '../dist/src/pion-resizer.js';
+
+		const header = 'Hello World!';
+
+		render(
+			html`
+				<pion-resizer .header=${header}>
+					some light-dom
+				</pion-resizer>
+			`,
+			document.querySelector('#demo')
+		)
+	</script>
+</body>
+</html>

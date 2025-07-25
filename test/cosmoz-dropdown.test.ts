@@ -1,4 +1,4 @@
-import '../src/cosmoz-dropdown';
+import '../src-old/cosmoz-dropdown';
 import { expect, html, fixture, nextFrame } from '@open-wc/testing';
 
 describe('cosmoz-dropdown', () => {
